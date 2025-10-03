@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ doc.name }} Profile{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'doctor_profile.css' %}">
+<div class="container mt-4">
+    <div class="card mx-auto">
+        <div class="card-body text-center">
+            {% if doc.photo %}
+                <img src="{{ doc.photo.url }}" class="img-fluid mb-3" alt="{{ doc.name }}" style="max-height:200px;">
+            {% else %}
+                <img src="{% static 'default_doctor.png' %}" class="img-fluid mb-3" alt="No Photo" style="max-height:200px;">
+            {% endif %}
+            <h2>{{ doc.name }}</h2>
+            <p class="card-text"><strong>Specialization:</strong> {{ doc.specialization }}</p>
+            <p class="card-text"><strong>Education:</strong> {{ doc.education }}</p>
+            <p class="card-text"><strong>Experience:</strong> {{ doc.experience }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ doc.email }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ doc.phone_number }}</p>
+            <p class="card-text"><strong>Department:</strong> {{ doc.department.name }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
