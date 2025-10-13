@@ -27,6 +27,9 @@
         <!-- Departments -->
         <li class="nav-item">
           <a class="nav-link" href="{% url 'department_list' %}">Departments</a>
+          <a class="nav-link" href="{% url 'send_message' %}" class="btn btn-outline-danger btn-sm"> Anonymous Message</a>
+          <a class="nav-link" href="{% url 'view_messages' %}">Anonymous Replies</a>
+
         </li>
 
         <!-- Login Dropdown -->
@@ -40,6 +43,8 @@
             <li><a class="dropdown-item" href="{% url 'doctor_login' %}">Doctor Login</a></li>
             <li><a class="dropdown-item" href="{% url 'patient_register' %}">Patient Register</a></li>
             <li><a class="dropdown-item" href="{% url 'patient_login' %}">Patient Login</a></li>
+           
+            
           </ul>
         </li>
 
@@ -53,6 +58,7 @@
   {% block content %}
   {% endblock %}
 </div>
+<!-- Footer -->
 <footer class="bg-body-tertiary shadow-sm mt-5">
   <div class="container text-center py-4">
     <span class="fw-bold">© 2025 My Hospital. All rights reserved.</span>
@@ -67,5 +73,7 @@
     
   </div>
 </footer>
+
 </body>
 </html>
+
