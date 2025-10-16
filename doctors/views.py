@@ -9,6 +9,7 @@ from django.contrib import messages
 # Create your views here.
 def department_list(request):
     departments = department.objects.all()
+    
     return render(request, 'department_list.html', {'departments': departments})
 
 def doctor_list(request):
