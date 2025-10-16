@@ -30,13 +30,7 @@ def patient_register(request):
 from django.contrib.auth import authenticate, login
 
 def patient_login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('patient_dashboard')
+   
         else:
             messages.error(request, 'Invalid credentials.')
     return render(request, 'patient_login.html')
